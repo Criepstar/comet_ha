@@ -61,12 +61,13 @@ class CometWifiConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             _LOGGER.error(f"MQTT connection failed: {e}")
             return False
 
-    async def _configure_mqtt_bridge(self, data):
+        async def _configure_mqtt_bridge(self, data):
         """Configure MQTT bridging to Eurotronic servers."""
-        bridge_config = "".join([
+        bridge_config = "
+".join([
             "connection eurotronic_bridge",
-            "@"
-            *[f"address {server}:1883" for server in EUROTRONIC_MQTT_SERVERS],
+            @"
+*[f"address {server}:1883" for server in EUROTRONIC_MQTT_SERVERS],
             "topic # both 0",
             "bridge_attempt_unsubscribe false"
         ])
