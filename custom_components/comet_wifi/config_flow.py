@@ -1,4 +1,4 @@
-﻿import logging
+import logging
 import voluptuous as vol
 
 from homeassistant import config_entries
@@ -63,11 +63,10 @@ class CometWifiConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
     async def _configure_mqtt_bridge(self, data):
         """Configure MQTT bridging to Eurotronic servers."""
-        bridge_config = "
-".join([
+        bridge_config = "".join([
             "connection eurotronic_bridge",
-            @"
-*[f"address {server}:1883" for server in EUROTRONIC_MQTT_SERVERS],
+            "@"
+            *[f"address {server}:1883" for server in EUROTRONIC_MQTT_SERVERS],
             "topic # both 0",
             "bridge_attempt_unsubscribe false"
         ])

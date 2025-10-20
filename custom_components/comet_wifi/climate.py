@@ -1,4 +1,4 @@
-﻿import logging
+import logging
 
 from homeassistant.components.climate import ClimateEntity
 from homeassistant.components.climate.const import HVAC_MODE_HEAT, SUPPORT_TARGET_TEMPERATURE

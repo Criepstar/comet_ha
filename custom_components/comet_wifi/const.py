@@ -1,4 +1,4 @@
-﻿DOMAIN = "comet_wifi"
+DOMAIN = "comet_wifi"
 PLATFORMS = ["climate"]
 MAC_PREFIXES = ["D43D39"]  # Add any other known prefixes
 EUROTRONIC_MQTT_SERVERS = [
